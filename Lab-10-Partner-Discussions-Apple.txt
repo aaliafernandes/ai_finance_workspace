@@ -1,0 +1,57 @@
+Lab 10 — Partner Discussions: Apple Inc. (AAPL)
+Educational finance coursework; not investment advice.
+
+1. Company difference and model effect
+
+Apple is different because its integrated hardware ecosystem—especially iPhone—drives recurring, higher-margin Services revenue and customer loyalty. In my pro forma, this supports steadier revenue growth and margin resilience, while Apple’s large share repurchases are likely to keep reducing diluted shares.
+
+Question:
+What are five years of Apple’s statements worth, built from assumptions I can defend?
+
+Company: Apple Inc. (NASDAQ: AAPL)
+
+2. My question for my partner: Abercrombie & Fitch
+
+Abercrombie has recently grown quickly and improved its margins. What evidence makes you think that growth and profitability can continue for the next five years rather than normalize back toward its longer-term history?
+
+3. Partner’s question about Apple’s installed base and Services revenue
+
+Question:
+How does Apple’s large installed base and Services revenue change the cash-flow growth and terminal-growth assumptions in your DCF?
+
+Answer:
+Apple’s large installed base makes cash flows more stable because existing customers can keep generating Services revenue through subscriptions, the App Store, cloud storage, and AppleCare. I would support moderately stronger near-term FCFF growth from Services growth and ecosystem loyalty. For terminal growth, though, I would stay conservative—around 3%—because Apple is already very large, so it cannot sustainably grow faster than the overall economy forever.
+
+4. Fresh-eyes attack and answer
+
+Partner’s attack:
+How does your terminal-growth assumption avoid treating installed-base and Services growth as permanent, and what evidence would make you reduce it?
+
+My answer:
+I use a conservative 3% terminal-growth rate, not Apple’s recent Services growth rate, because even a strong installed base cannot grow faster than the overall economy forever. I would reduce it if Services growth slows for several years, iPhone demand declines, or regulation and competition put lasting pressure on Apple’s margins.
+
+My short attack for my partner:
+What evidence would make you lower your Abercrombie revenue-growth assumption if its recent turnaround momentum fades?
+
+5. Organic / same-store growth discussion
+
+What it is:
+Same-store or organic growth measures growth from the same operating locations over both periods. It removes the effect of acquisitions, divestitures, and new locations, so it shows whether the existing business is actually growing.
+
+Apple MD&A disclosure:
+Apple does not disclose a retail-style same-store or organic sales metric in its MD&A. Instead, it reports total revenue growth by product category and geography; FY2025 total sales grew 6%, while Services grew 14%.
+
+Why the ABG video uses 1.8% rather than reported 4.7% growth:
+ABG’s reported 4.7% revenue growth includes the effect of acquisitions, especially the Herb Chambers dealerships. The video uses 1.8% as a more conservative organic/same-store growth assumption because it represents growth from dealerships ABG already owned, rather than growth purchased through acquisitions. ABG measures organic growth on a same-store basis, excludes divested locations, and says the 2025 increase was largely due to the Herb Chambers acquisition.
+
+6. Reflection
+
+Which label I would defend the longest:
+I would defend the history label the longest, especially Apple’s FY2025 gross margin of 46.9%, because it is a reported result from Apple’s 10-K rather than my forecast. My judgment assumptions, such as future revenue growth and terminal growth, are more uncertain because future conditions can change.
+
+Number that surprised me:
+The number that surprised me was Apple’s Services gross margin of 75.4% in FY2025, compared with 36.8% for Products. It shows why the installed base and Services business can have such a large effect on Apple’s overall profitability.
+
+Sources retrieved September 24, 2026:
+Apple FY2025 Form 10-K: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
+Asbury FY2025 Form 10-K: https://www.sec.gov/Archives/edgar/data/1144980/000114498026000051/abg-20251231.htm
