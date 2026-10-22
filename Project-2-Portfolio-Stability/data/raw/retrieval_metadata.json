@@ -1,0 +1,12 @@
+{
+  "source": "Yahoo Finance public chart endpoint",
+  "retrieved_utc": "2026-10-22T17:55:40.986156+00:00",
+  "tickers": [
+    "BIL",
+    "IEF",
+    "LQD",
+    "VT"
+  ],
+  "observations": 61,
+  "processed_file": "data\\processed\\prices.csv"
+}

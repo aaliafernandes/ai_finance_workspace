@@ -8,7 +8,9 @@ import csv
 import json
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.request import urlopen
+from time import sleep
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
 
 
 TICKERS = ("BIL", "IEF", "LQD", "VT")
@@ -24,8 +26,16 @@ def fetch_monthly_history(ticker):
         "?period1=1633046400&period2=1792713600&interval=1mo"
         "&events=history&includeAdjustedClose=true"
     )
-    with urlopen(url, timeout=30) as response:
-        payload = json.load(response)
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0 (coursework data downloader)"})
+    for attempt in range(3):
+        try:
+            with urlopen(request, timeout=30) as response:
+                payload = json.load(response)
+            break
+        except HTTPError as error:
+            if error.code != 429 or attempt == 2:
+                raise
+            sleep(3 * (attempt + 1))
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     (RAW_DIR / f"{ticker}_yahoo_monthly.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 

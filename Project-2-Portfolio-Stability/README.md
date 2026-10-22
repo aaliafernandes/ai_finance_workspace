@@ -25,7 +25,7 @@ history records when they were saved.
 
 - [x] Project 2 workspace created
 - [x] Illustrative mandate and four-fund practice universe documented
-- [ ] Download and validate five years of monthly adjusted-close prices
-- [ ] Build the Project 2 app
-- [ ] Record all-month and last-36-month results
+- [x] Download and validate five years of monthly adjusted-close prices
+- [x] Build and test the Lab 15 Streamlit app in `Labs/Lab-14-Meridian/app.py`
+- [x] Record all-month and last-36-month results
 - [ ] Add dated partner discussion notes and final decision
