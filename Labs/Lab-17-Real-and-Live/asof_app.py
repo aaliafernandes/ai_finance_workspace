@@ -178,18 +178,21 @@ if not selected:
     st.info("Select at least one FRED series ID.")
     st.stop()
 
-st.subheader("Rate chart")
+st.subheader("Rate charts")
 chart_choice = st.selectbox(
-    "Choose the series to graph",
-    options=selected,
-    format_func=lambda series_id: f"{series_id} — {SERIES.get(series_id, 'Custom FRED series')}",
-    help="Select a series to update the chart below. The table still compares every selected series.",
+    "Generated chart component",
+    options=["All selected series", *selected],
+    format_func=lambda choice: (
+        "All selected series" if choice == "All selected series"
+        else f"{choice} — {SERIES.get(choice, 'Custom FRED series')}"
+    ),
+    help="The default shows one generated chart for every selected series. Choose one ID to focus on its chart.",
 )
 
 comparison_rows = []
 for series_id in selected:
     label = SERIES.get(series_id, "Custom FRED series")
-    show_chart = chart_choice == series_id
+    show_chart = chart_choice == "All selected series" or chart_choice == series_id
     if show_chart:
         st.subheader(f"{series_id} — {label}")
     try:

@@ -9,8 +9,9 @@ From the workspace root in PowerShell:
 ```
 
 The sidebar begins with BAA, FEDFUNDS, DGS10, and MORTGAGE30US. Add a custom
-FRED ID (for example, `PAYEMS`) in the text box. The generated **Rate chart**
-component has a **Choose the series to graph** dropdown directly above it. The
+FRED ID (for example, `PAYEMS`) in the text box. The generated **Rate charts**
+component shows all selected series by default, as required by the lab. Its
+**Generated chart component** dropdown can focus on one selected series. The
 comparison table still includes every selected series. The app makes one cached
 FRED download and one cached ALFRED vintage download per selected series; it
 needs no API key or account.
