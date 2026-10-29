@@ -1,0 +1,3 @@
+[browser]
+# Avoid writing a telemetry machine ID to a restricted Windows user profile.
+gatherUsageStats = false
