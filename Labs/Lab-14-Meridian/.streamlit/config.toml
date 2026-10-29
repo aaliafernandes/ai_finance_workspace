@@ -1,0 +1,4 @@
+[browser]
+# Keep Streamlit from writing a telemetry machine ID to the user profile. This
+# makes the learning app runnable in restricted Windows environments.
+gatherUsageStats = false

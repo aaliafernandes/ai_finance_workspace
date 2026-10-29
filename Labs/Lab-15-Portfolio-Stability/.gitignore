@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+streamlit-*-error.log
+streamlit-*-output.log

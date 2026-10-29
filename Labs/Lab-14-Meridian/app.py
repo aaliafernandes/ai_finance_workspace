@@ -30,7 +30,7 @@ def show_mix(title, mix, sleeves):
             "Weight": [f"{mix['weights'][name] * 100:.0f}%" for name in sleeves],
         },
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
     )
     first, second, third = st.columns(3)
     first.metric("Expected return", f"{mix['expected_return'] * 100:.2f}%")
@@ -81,11 +81,17 @@ for column, name in zip(return_columns, active_sleeves):
         )
 
 st.subheader("Reserve eligibility")
+reserve_defaults = set(RESERVE_ELIGIBLE) & set(active_sleeves)
+# Lab 15's documented practice CSV uses BIL for its cash/reserve sleeve.
+# Preserve Meridian's defaults for its training inputs, while making that
+# uploaded exercise immediately usable without silently changing other tickers.
+if uploaded_prices is not None and "BIL" in active_sleeves:
+    reserve_defaults.add("BIL")
 reserve_columns = st.columns(len(active_sleeves))
 reserve_eligible = set()
 for column, name in zip(reserve_columns, active_sleeves):
     with column:
-        if st.checkbox(name, value=name in RESERVE_ELIGIBLE, key=f"reserve_{name}"):
+        if st.checkbox(name, value=name in reserve_defaults, key=f"reserve_{name}"):
             reserve_eligible.add(name)
 
 loaded_mix = find_lowest_risk_mix(
