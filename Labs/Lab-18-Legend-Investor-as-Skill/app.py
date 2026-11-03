@@ -23,6 +23,12 @@ def run_analysis(ticker: str) -> dict:
     return json.loads(output.read_text(encoding="utf-8"))
 
 
+def saved_analysis(ticker: str) -> dict | None:
+    """Open prior script output so the app is useful immediately on startup."""
+    path = OUTPUTS / f"{ticker}_facts.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
 def unprinted_numbers(memo: str, facts: dict) -> list[str]:
     """Flag numeric strings in the memo that do not occur in script output."""
     numeric = r"(?<![\w.])-?\d[\d,]*(?:\.\d+)?%?"
@@ -36,6 +42,13 @@ st.set_page_config(page_title="Buffett 10-K Skill", layout="wide")
 st.title("Buffett 10-K Skill")
 st.caption("Data from SEC EDGAR; built with AI help, a learning demonstration, not investment advice.")
 ticker = st.text_input("Ticker", value="COST").strip().upper()
+
+# COST's verified output is bundled with the lab, so the required chart, table,
+# checks, and memo appear immediately when the app opens. Other saved tickers
+# (for example, JPM) also open without a repeat download.
+loaded = st.session_state.get("facts")
+if not loaded or loaded.get("ticker") != ticker:
+    st.session_state["facts"] = saved_analysis(ticker)
 
 if st.button("Download 10-K facts and run checks", type="primary"):
     try:
@@ -53,14 +66,29 @@ if facts:
     st.subheader("Five annual 10-K rows and XBRL tags")
     st.dataframe(table, use_container_width=True, hide_index=True)
     st.subheader("Buffett checks computed by code")
-    st.dataframe(pd.DataFrame(facts["checks"].items(), columns=["Check", "Result"]), use_container_width=True, hide_index=True)
+    checks = pd.DataFrame(
+        [
+            {"Buffett check": "ROE of 15% or more every year", "Result": facts["checks"]["roe_15_percent_every_year"]},
+            {"Buffett check": "Owner earnings positive every year", "Result": facts["checks"]["owner_earnings_positive_every_year"]},
+            {"Buffett check": "Owner earnings grew, first year to last", "Result": facts["checks"]["owner_earnings_grew_first_to_last"]},
+        ]
+    )
+    st.dataframe(checks, use_container_width=True, hide_index=True)
 
     memo_path = OUTPUTS / f"{facts['ticker']}_memo.md"
-    memo = memo_path.read_text(encoding="utf-8") if memo_path.exists() else "No memo file yet. Ask the skill to write one using only these printed facts."
+    memo_seed = memo_path.read_text(encoding="utf-8") if memo_path.exists() else "No memo file yet. Ask the skill to write one using only these printed facts."
     st.subheader("Buffett-style memo")
+    memo = st.text_area(
+        "Memo text (edit here to test the number audit)",
+        value=memo_seed,
+        height=300,
+        key=f"memo_editor_{facts['ticker']}",
+    )
     st.markdown(memo)
     unverified = unprinted_numbers(memo, facts)
     if unverified:
         st.warning("Numbers in the memo not printed by the script: " + ", ".join(unverified))
     else:
         st.success("All numbers in the memo appear in the script output.")
+else:
+    st.info("Enter a ticker and select Download 10-K facts and run checks.")
