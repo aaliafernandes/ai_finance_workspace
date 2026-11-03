@@ -1,0 +1,93 @@
+{
+  "ticker": "COST",
+  "cik": "0000909832",
+  "source": "SEC EDGAR companyfacts; 10-K annual facts only",
+  "retrieved": "2026-11-03",
+  "check_rules": {
+    "roe_minimum_percent": 15,
+    "owner_earnings_must_be_positive": true,
+    "owner_earnings_must_grow_first_to_last": true
+  },
+  "rows": [
+    {
+      "fiscal_year_end": "2022-08-28",
+      "revenue_usd_millions": 226954.0,
+      "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "net_income_usd_millions": 5844.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 7392.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": 3891.0,
+      "capital_spending_tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "equity_usd_millions": 20642.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 28.3,
+      "owner_earnings_usd_millions": 3501.0
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "revenue_usd_millions": 242290.0,
+      "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "net_income_usd_millions": 6292.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 11068.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": 4323.0,
+      "capital_spending_tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "equity_usd_millions": 25058.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 25.1,
+      "owner_earnings_usd_millions": 6745.0
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "revenue_usd_millions": 254453.0,
+      "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "net_income_usd_millions": 7367.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 11339.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": 4710.0,
+      "capital_spending_tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "equity_usd_millions": 23622.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 31.2,
+      "owner_earnings_usd_millions": 6629.0
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "revenue_usd_millions": 275235.0,
+      "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "net_income_usd_millions": 8099.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 13335.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": 5498.0,
+      "capital_spending_tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "equity_usd_millions": 29164.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 27.8,
+      "owner_earnings_usd_millions": 7837.0
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "revenue_usd_millions": 303154.0,
+      "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "net_income_usd_millions": 9226.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 15817.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": 6435.0,
+      "capital_spending_tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "equity_usd_millions": 35803.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 25.8,
+      "owner_earnings_usd_millions": 9382.0
+    }
+  ],
+  "checks": {
+    "roe_15_percent_every_year": "pass",
+    "owner_earnings_positive_every_year": "pass",
+    "owner_earnings_grew_first_to_last": "pass"
+  }
+}

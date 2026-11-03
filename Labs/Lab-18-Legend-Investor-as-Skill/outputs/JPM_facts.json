@@ -1,0 +1,93 @@
+{
+  "ticker": "JPM",
+  "cik": "0000019617",
+  "source": "SEC EDGAR companyfacts; 10-K annual facts only",
+  "retrieved": "2026-11-03",
+  "check_rules": {
+    "roe_minimum_percent": 15,
+    "owner_earnings_must_be_positive": true,
+    "owner_earnings_must_grow_first_to_last": true
+  },
+  "rows": [
+    {
+      "fiscal_year_end": "2021-12-31",
+      "revenue_usd_millions": 121649.0,
+      "revenue_tag": "Revenues",
+      "net_income_usd_millions": 48334.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 78084.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": "not found",
+      "capital_spending_tag": "not found",
+      "equity_usd_millions": 294127.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 16.4,
+      "owner_earnings_usd_millions": "not found"
+    },
+    {
+      "fiscal_year_end": "2022-12-31",
+      "revenue_usd_millions": 128695.0,
+      "revenue_tag": "Revenues",
+      "net_income_usd_millions": 37676.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 107119.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": "not found",
+      "capital_spending_tag": "not found",
+      "equity_usd_millions": 292332.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 12.9,
+      "owner_earnings_usd_millions": "not found"
+    },
+    {
+      "fiscal_year_end": "2023-12-31",
+      "revenue_usd_millions": 158104.0,
+      "revenue_tag": "Revenues",
+      "net_income_usd_millions": 49552.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": 12974.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": "not found",
+      "capital_spending_tag": "not found",
+      "equity_usd_millions": 327878.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 15.1,
+      "owner_earnings_usd_millions": "not found"
+    },
+    {
+      "fiscal_year_end": "2024-12-31",
+      "revenue_usd_millions": 177556.0,
+      "revenue_tag": "Revenues",
+      "net_income_usd_millions": 58471.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": -42012.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": "not found",
+      "capital_spending_tag": "not found",
+      "equity_usd_millions": 344758.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 17.0,
+      "owner_earnings_usd_millions": "not found"
+    },
+    {
+      "fiscal_year_end": "2025-12-31",
+      "revenue_usd_millions": 182447.0,
+      "revenue_tag": "Revenues",
+      "net_income_usd_millions": 57048.0,
+      "net_income_tag": "NetIncomeLoss",
+      "operating_cash_flow_usd_millions": -147782.0,
+      "operating_cash_flow_tag": "NetCashProvidedByUsedInOperatingActivities",
+      "capital_spending_usd_millions": "not found",
+      "capital_spending_tag": "not found",
+      "equity_usd_millions": 362438.0,
+      "equity_tag": "StockholdersEquity",
+      "roe_percent": 15.7,
+      "owner_earnings_usd_millions": "not found"
+    }
+  ],
+  "checks": {
+    "roe_15_percent_every_year": "fail",
+    "owner_earnings_positive_every_year": "not known",
+    "owner_earnings_grew_first_to_last": "not known"
+  }
+}
