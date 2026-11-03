@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -15,9 +16,18 @@ SCRIPT = ROOT / ".codex" / "skills" / "buffett-10k-analysis" / "scripts" / "edga
 OUTPUTS = Path(__file__).parent / "outputs"
 
 
-def run_analysis(ticker: str) -> dict:
+def run_analysis(ticker: str, user_agent: str) -> dict:
+    if "@" not in user_agent or len(user_agent.split()) < 2:
+        raise RuntimeError("Enter an SEC User-Agent containing your name and email before downloading.")
     output = OUTPUTS / f"{ticker}_facts.json"
-    result = subprocess.run([sys.executable, str(SCRIPT), ticker, "--json", str(output)], capture_output=True, text=True, check=False)
+    environment = {**os.environ, "SEC_USER_AGENT": user_agent}
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), ticker, "--json", str(output)],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=environment,
+    )
     if result.returncode:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
     return json.loads(output.read_text(encoding="utf-8"))
@@ -42,6 +52,11 @@ st.set_page_config(page_title="Buffett 10-K Skill", layout="wide")
 st.title("Buffett 10-K Skill")
 st.caption("Data from SEC EDGAR; built with AI help, a learning demonstration, not investment advice.")
 ticker = st.text_input("Ticker", value="COST").strip().upper()
+user_agent = st.text_input(
+    "SEC User-Agent (your name and Purdue email; required only for a fresh download)",
+    value=os.getenv("SEC_USER_AGENT", ""),
+    placeholder="Your Name your.email@purdue.edu",
+)
 
 # COST's verified output is bundled with the lab, so the required chart, table,
 # checks, and memo appear immediately when the app opens. Other saved tickers
@@ -52,7 +67,7 @@ if not loaded or loaded.get("ticker") != ticker:
 
 if st.button("Download 10-K facts and run checks", type="primary"):
     try:
-        st.session_state["facts"] = run_analysis(ticker)
+        st.session_state["facts"] = run_analysis(ticker, user_agent)
         st.success(f"Downloaded five annual 10-K rows for {ticker}.")
     except RuntimeError as error:
         st.error(error)

@@ -16,7 +16,9 @@ from pathlib import Path
 
 TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
-USER_AGENT = os.getenv("SEC_USER_AGENT", "Finance Student student@example.edu")
+# The SEC requests an identifying User-Agent for automated access. The caller
+# must set this to their own name and email; a placeholder is never sent.
+USER_AGENT = os.getenv("SEC_USER_AGENT", "").strip()
 
 METRICS = {
     "revenue": ["RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues"],
@@ -28,6 +30,8 @@ METRICS = {
 
 
 def fetch_json(url: str) -> dict:
+    if not USER_AGENT:
+        raise ValueError("Set SEC_USER_AGENT to your name and email before downloading EDGAR data.")
     # Do not request compressed content: urllib's JSON loader expects decoded text.
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=30) as response:
