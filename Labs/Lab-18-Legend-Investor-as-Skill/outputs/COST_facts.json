@@ -6,7 +6,10 @@
   "check_rules": {
     "roe_minimum_percent": 15,
     "owner_earnings_must_be_positive": true,
-    "owner_earnings_must_grow_first_to_last": true
+    "owner_earnings_must_grow_first_to_last": true,
+    "graham_current_ratio_minimum": 2,
+    "graham_probe_threshold": 1,
+    "burry_liabilities_to_equity_maximum": 2
   },
   "rows": [
     {
@@ -23,6 +26,8 @@
       "equity_tag": "StockholdersEquity",
       "roe_percent": 28.3,
       "owner_earnings_usd_millions": 3501.0
+      ,"current_ratio": 1.02
+      ,"liabilities_to_equity": 2.11
     },
     {
       "fiscal_year_end": "2023-09-03",
@@ -38,6 +43,8 @@
       "equity_tag": "StockholdersEquity",
       "roe_percent": 25.1,
       "owner_earnings_usd_millions": 6745.0
+      ,"current_ratio": 1.07
+      ,"liabilities_to_equity": 1.75
     },
     {
       "fiscal_year_end": "2024-09-01",
@@ -53,6 +60,8 @@
       "equity_tag": "StockholdersEquity",
       "roe_percent": 31.2,
       "owner_earnings_usd_millions": 6629.0
+      ,"current_ratio": 0.97
+      ,"liabilities_to_equity": 1.96
     },
     {
       "fiscal_year_end": "2025-08-31",
@@ -68,6 +77,8 @@
       "equity_tag": "StockholdersEquity",
       "roe_percent": 27.8,
       "owner_earnings_usd_millions": 7837.0
+      ,"current_ratio": 1.03
+      ,"liabilities_to_equity": 1.64
     },
     {
       "fiscal_year_end": "2026-08-30",
@@ -83,6 +94,8 @@
       "equity_tag": "StockholdersEquity",
       "roe_percent": 25.8,
       "owner_earnings_usd_millions": 9382.0
+      ,"current_ratio": 1.06
+      ,"liabilities_to_equity": 1.49
     }
   ],
   "checks": {

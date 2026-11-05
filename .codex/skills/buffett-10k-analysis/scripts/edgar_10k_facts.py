@@ -26,6 +26,9 @@ METRICS = {
     "operating_cash_flow": ["NetCashProvidedByUsedInOperatingActivities"],
     "capital_spending": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"],
     "equity": ["StockholdersEquity"],
+    "liabilities": ["Liabilities"],
+    "assets_current": ["AssetsCurrent"],
+    "liabilities_current": ["LiabilitiesCurrent"],
 }
 
 
@@ -92,13 +95,30 @@ def calc_owner_earnings(ocf: float | None, capex: float | None) -> float | str:
     return round((ocf - capex) / 1_000_000, 1)
 
 
+def calc_ratio(numerator: float | None, denominator: float | None) -> float | str:
+    """Return a ratio only when both XBRL facts exist and the divisor is positive."""
+    if numerator is None or denominator is None or denominator <= 0:
+        return "not known"
+    return round(numerator / denominator, 2)
+
+
 def evaluate(rows: list[dict]) -> dict[str, str]:
     roe = [row["roe_percent"] for row in rows]
     owner = [row["owner_earnings_usd_millions"] for row in rows]
+    net_income = [row["net_income_usd_millions"] for row in rows]
+    ocf = [row["operating_cash_flow_usd_millions"] for row in rows]
+    latest = rows[-1]
+    current_ratio = latest["current_ratio"]
+    liabilities_to_equity = latest["liabilities_to_equity"]
     return {
         "roe_15_percent_every_year": "not known" if any(value == "not known" for value in roe) else ("pass" if all(value >= 15 for value in roe) else "fail"),
         "owner_earnings_positive_every_year": "not known" if any(value == "not found" for value in owner) else ("pass" if all(value > 0 for value in owner) else "fail"),
         "owner_earnings_grew_first_to_last": "not known" if any(value == "not found" for value in owner) else ("pass" if owner[-1] > owner[0] else "fail"),
+        "graham_current_ratio_2_or_more_latest_year": "not known" if current_ratio == "not known" else ("pass" if current_ratio >= 2 else "fail"),
+        "graham_net_income_positive_every_year": "not known" if any(value == "not found" for value in net_income) else ("pass" if all(value > 0 for value in net_income) else "fail"),
+        "graham_net_income_grew_first_to_last": "not known" if any(value == "not found" for value in net_income) else ("pass" if net_income[-1] > net_income[0] else "fail"),
+        "burry_operating_cash_flow_at_least_net_income_every_year": "not known" if any(value == "not found" for value in ocf + net_income) else ("pass" if all(cash >= income for cash, income in zip(ocf, net_income)) else "fail"),
+        "burry_liabilities_no_more_than_twice_equity_latest_year": "not known" if liabilities_to_equity == "not known" else ("pass" if liabilities_to_equity <= 2 else "fail"),
     }
 
 
@@ -117,7 +137,7 @@ def build_rows(ticker: str, facts: dict) -> list[dict]:
     for end in fiscal_ends:
         raw, tags = {}, {}
         for name, candidates in METRICS.items():
-            fact, tag = latest_for_end(facts, candidates, end, instant=(name == "equity"))
+            fact, tag = latest_for_end(facts, candidates, end, instant=name in {"equity", "liabilities", "assets_current", "liabilities_current"})
             raw[name] = fact.get("val") if fact else None
             tags[name] = tag or "not found"
         rows.append({
@@ -132,8 +152,16 @@ def build_rows(ticker: str, facts: dict) -> list[dict]:
             "capital_spending_tag": tags["capital_spending"],
             "equity_usd_millions": display(raw["equity"]),
             "equity_tag": tags["equity"],
+            "liabilities_usd_millions": display(raw["liabilities"]),
+            "liabilities_tag": tags["liabilities"],
+            "assets_current_usd_millions": display(raw["assets_current"]),
+            "assets_current_tag": tags["assets_current"],
+            "liabilities_current_usd_millions": display(raw["liabilities_current"]),
+            "liabilities_current_tag": tags["liabilities_current"],
             "roe_percent": calc_roe(raw["net_income"], raw["equity"]),
             "owner_earnings_usd_millions": calc_owner_earnings(raw["operating_cash_flow"], raw["capital_spending"]),
+            "current_ratio": calc_ratio(raw["assets_current"], raw["liabilities_current"]),
+            "liabilities_to_equity": calc_ratio(raw["liabilities"], raw["equity"]),
         })
     return rows
 
@@ -152,7 +180,7 @@ def main() -> None:
         "cik": f"{cik:010d}",
         "source": "SEC EDGAR companyfacts; 10-K annual facts only",
         "retrieved": date.today().isoformat(),
-        "check_rules": {"roe_minimum_percent": 15, "owner_earnings_must_be_positive": True, "owner_earnings_must_grow_first_to_last": True},
+        "check_rules": {"roe_minimum_percent": 15, "owner_earnings_must_be_positive": True, "owner_earnings_must_grow_first_to_last": True, "graham_current_ratio_minimum": 2, "graham_probe_threshold": 1, "burry_liabilities_to_equity_maximum": 2},
         "rows": rows,
         "checks": evaluate(rows),
     }

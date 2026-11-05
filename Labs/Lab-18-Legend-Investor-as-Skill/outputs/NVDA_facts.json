@@ -1,0 +1,15 @@
+{
+  "ticker": "NVDA",
+  "cik": "0001045810",
+  "source": "SEC EDGAR annual 10-K facts only; offline fixture transcribed from annual filings because no SEC_USER_AGENT was available on this machine",
+  "retrieved": "2026-11-05",
+  "check_rules": {"roe_minimum_percent": 15, "owner_earnings_must_be_positive": true, "owner_earnings_must_grow_first_to_last": true, "graham_current_ratio_minimum": 2, "graham_probe_threshold": 1, "burry_liabilities_to_equity_maximum": 2},
+  "rows": [
+    {"fiscal_year_end": "2022-01-30", "revenue_usd_millions": 26914.0, "net_income_usd_millions": 9752.0, "operating_cash_flow_usd_millions": 9108.0, "capital_spending_usd_millions": 976.0, "equity_usd_millions": 26612.0, "roe_percent": 36.6, "owner_earnings_usd_millions": 8132.0, "assets_current_usd_millions": 28829.0, "liabilities_current_usd_millions": 4335.0, "liabilities_usd_millions": 17575.0, "current_ratio": 6.65, "liabilities_to_equity": 0.66},
+    {"fiscal_year_end": "2023-01-29", "revenue_usd_millions": 26974.0, "net_income_usd_millions": 4368.0, "operating_cash_flow_usd_millions": 5641.0, "capital_spending_usd_millions": 1833.0, "equity_usd_millions": 22101.0, "roe_percent": 19.8, "owner_earnings_usd_millions": 3808.0, "assets_current_usd_millions": 23073.0, "liabilities_current_usd_millions": 6563.0, "liabilities_usd_millions": 19081.0, "current_ratio": 3.52, "liabilities_to_equity": 0.86},
+    {"fiscal_year_end": "2024-01-28", "revenue_usd_millions": 60922.0, "net_income_usd_millions": 29760.0, "operating_cash_flow_usd_millions": 28090.0, "capital_spending_usd_millions": 1069.0, "equity_usd_millions": 42978.0, "roe_percent": 69.2, "owner_earnings_usd_millions": 27021.0, "assets_current_usd_millions": 44345.0, "liabilities_current_usd_millions": 10631.0, "liabilities_usd_millions": 22750.0, "current_ratio": 4.17, "liabilities_to_equity": 0.53},
+    {"fiscal_year_end": "2025-01-26", "revenue_usd_millions": 130497.0, "net_income_usd_millions": 72880.0, "operating_cash_flow_usd_millions": 64089.0, "capital_spending_usd_millions": 3236.0, "equity_usd_millions": 79327.0, "roe_percent": 91.9, "owner_earnings_usd_millions": 60853.0, "assets_current_usd_millions": 80126.0, "liabilities_current_usd_millions": 18047.0, "liabilities_usd_millions": 32274.0, "current_ratio": 4.44, "liabilities_to_equity": 0.41},
+    {"fiscal_year_end": "2026-01-25", "revenue_usd_millions": 215938.0, "net_income_usd_millions": 120067.0, "operating_cash_flow_usd_millions": 102718.0, "capital_spending_usd_millions": 6042.0, "equity_usd_millions": 157293.0, "roe_percent": 76.3, "owner_earnings_usd_millions": 96676.0, "assets_current_usd_millions": 125605.0, "liabilities_current_usd_millions": 32163.0, "liabilities_usd_millions": 49510.0, "current_ratio": 3.91, "liabilities_to_equity": 0.31}
+  ],
+  "checks": {"roe_15_percent_every_year": "pass", "owner_earnings_positive_every_year": "pass", "owner_earnings_grew_first_to_last": "pass"}
+}
