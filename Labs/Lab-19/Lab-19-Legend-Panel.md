@@ -16,7 +16,7 @@ liabilities-to-equity in code. Each memo is generated only from values printed
 in that fact set. The app presents the check table, three side-by-side memos,
 and a number-audit flag for every memo.
 
-The local Graham and Burry skill instructions are in `Lab-18-Legend-Investor-as-Skill/skills/`.
+The local Graham and Burry skill instructions are in this Lab 19 folder.
 
 ## Known answer: COST
 
@@ -66,7 +66,7 @@ and any passing name receives valuation and 10-K risk/footnote review.
 
 ## Reproduction and limitation
 
-Run `streamlit run Labs/Lab-18-Legend-Investor-as-Skill/app.py`. For a fresh
+Run `streamlit run Labs/Lab-19/app.py`. For a fresh
 EDGAR run, enter a personal SEC User-Agent in the app. The checked-in NVDA
 fixture is labeled as an offline transcription because this workspace has no
 configured SEC User-Agent and no Python command available; replace it by
