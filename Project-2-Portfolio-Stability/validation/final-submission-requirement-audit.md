@@ -12,8 +12,8 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 | Verification statement | Status | Evidence / boundary |
 | --- | --- | --- |
-| Successfully pushed to GitHub | PASS for the package at `5e0f6016ca477da9a866fe942a4265397942a983` | `origin/main` was pushed and resolved to that SHA during the prior packaging run. The final correction commit must be pushed separately. |
-| Verified from a clean remote clone | PASS for the package at `5e0f6016ca477da9a866fe942a4265397942a983` | A fresh shallow clone found 19 required files, the locked-record blob matched the pre-run commit, the pipeline passed, 42 tests passed, and headless Streamlit returned HTTP 200. See `validation/final-cold-run-report.md`. |
+| Successfully pushed to GitHub | PASS for the corrected package at `46acffaab7e8b69ee6f94fa7950176c704aebfe7` | `origin/main` was pushed and resolved to that SHA. |
+| Verified from a clean remote clone | PASS for the corrected package at `46acffaab7e8b69ee6f94fa7950176c704aebfe7` | A fresh shallow clone found 19 required files, and the locked-record blob matched the pre-run commit. Earlier clean-run evidence shows the pipeline passed, 42 tests passed, and headless Streamlit returned HTTP 200. See `validation/final-cold-run-report.md`. |
 | Independently verified while logged out | UNVERIFIED | No logged-out browser/access test was performed. This must not be inferred from a Git clone. |
 | Instructional-team / unlisted-video access | UNVERIFIED | Student must verify after repository/video sharing settings and actual videos exist. |
 
@@ -38,7 +38,7 @@ On 2026-11-23, after the README and audit wording correction, the approved-data 
 
 | Requirement | Exact project evidence | Status | Required action |
 | --- | --- | --- | --- |
-| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/`; `validation/final-cold-run-report.md` | PARTIAL | A prior pushed package passed a clean remote clone. Push this final correction and verify its remote contents; a logged-out/instructional-team check remains student work. No `.env.example` is needed because the project uses no credentials. |
+| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/`; `validation/final-cold-run-report.md` | PARTIAL | The corrected package was pushed and clean-clone verified. A logged-out/instructional-team check remains student work. No `.env.example` is needed because the project uses no credentials. |
 | Visible output shows material inputs, as-of date, and decision without running code | `outputs/phase-5b-stress-results.md`; `docs/decision-memo.md` | PASS | Preserve the files and confirm their GitHub rendering after push. |
 | Decision Memo PDF, maximum two pages | `docs/Decision-Memo.pdf` | PASS | Visually checked; one page. |
 | Validation and AI Use PDF including tools, checks, limitations, and locked record | `docs/Validation-and-AI-Use.pdf`; `docs/validation-and-ai-use.md` | PASS | Visually checked; one page. |
@@ -64,4 +64,4 @@ On 2026-11-23, after the README and audit wording correction, the approved-data 
 
 ## Conclusion
 
-The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record, a passing clean-remote-clone record, and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until the final correction push/remote check, three real videos/transcripts, manifest completion, and Brightspace attachments are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.
+The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record, a passing clean-remote-clone record, and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until three real videos/transcripts, manifest completion with their actual metadata, Brightspace attachments, and logged-out/instructional-team access checks are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.
