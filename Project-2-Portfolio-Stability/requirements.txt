@@ -1,0 +1,6 @@
+# Requires Python 3.11 or later. The app uses the pinned packages below.
+streamlit==1.66.0
+pandas==3.0.6
+altair==6.3.0
+reportlab==5.1.0
+pymupdf==2.1

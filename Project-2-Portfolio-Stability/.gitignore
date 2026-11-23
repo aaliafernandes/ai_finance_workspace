@@ -1,0 +1,7 @@
+# Local Python and Streamlit artifacts only. Preserve all raw, approved, output, and validation evidence.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.streamlit/secrets.toml
+streamlit-*.log

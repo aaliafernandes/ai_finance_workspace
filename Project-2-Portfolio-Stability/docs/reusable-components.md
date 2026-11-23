@@ -1,0 +1,17 @@
+# Reusable completed-lab components
+
+This inventory identifies source material that may inform Project 2. These files remain in their original lab locations and will not be modified. Project 2 must not rely on relative imports into `Labs/`; any reused logic must be reviewed, attributed, and implemented in project-owned files.
+
+| Component | Original path | Evidence / permitted reuse | Project 2 limitation or required adaptation |
+| --- | --- | --- |
+| Mandate checker | `Labs/Lab-13-Meridian/mandate.py` | Tested Lab 13 rules: weights, long-only, reserve, liquidity, and issuer concentration. | Training holdings and liquidity days are not evidence for live ETFs. Add Project 2-specific rule inputs and transparent verdicts. |
+| Mandate defense | `Labs/Lab-13-Meridian/Lab-13-Portfolio-Mandate-Defense.md` | Defines S1–S10, including the unresolved calendar-loss rule. | Use as the case source; do not convert its unresolved rule into a hard limit without approval. |
+| Portfolio math | `Labs/Lab-14-Meridian/portfolio.py` | Tested covariance, expected return, volatility, equal weight, inverse volatility, and constrained-search helper functions. | Lab inputs are course-authored training values. Revalidate against Project 2 inputs and add turnover/cost/complete mandate logic. |
+| Lab 14 evidence | `Labs/Lab-14-Meridian/Lab-14-Portfolio-Baselines.md` | Known-answer results and benchmark interpretation. | The inverse-volatility portfolio is a potential second transparent baseline but is not selected yet. |
+| Streamlit prototype | `Labs/Lab-14-Meridian/app.py` | Demonstrates controls, uploaded prices, minimum-volatility search, and historical-window comparison. | Does not meet Project 2 requirements: no complete mandate verdicts, baselines, costs, signal, Reset to Base, visible output, or standalone setup. |
+| Practice price data | `Labs/Lab-15-Portfolio-Stability/data/` and `Project-2-Portfolio-Stability/data/` | Raw Yahoo responses, retrieval metadata, and 61 monthly adjusted-close observations for BIL/IEF/LQD/VT. | Phase 2 must validate lineage, field/date meanings, source limitations, and Project 2 point-in-time boundary. |
+| Stability evidence | `Labs/Lab-15-Portfolio-Stability/Meridian-Known-Answer-Verification.md` | Documents the historical-window and estimate-change exercises. | Existing results are Lab evidence only, not Project 2 results or recommendation support. |
+| Project 2 scaffold | `Project-2-Portfolio-Stability/src/download_prices.py` | Project-local downloader prototype and archived data. | It writes data and has hard-coded dates; review/rebuild in Phase 2 rather than execute during Phase 1. |
+| Provenance gate | `Labs/Lab-16-Provenance-Gate/asof.py` and `verify_known_answer.py` | Lab 16 point-in-time filtering and known-answer pattern. | Adapt only after identifying Project 2 vintage data and decision dates. |
+| ALFRED/FRED app and data card | `Labs/Lab-17-Real-and-Live/asof_app.py`, `DATA-CARD.md`, `CHECKOUT.md` | Candidate investment-grade credit-spread series and as-of methodology. | Validate timing, source history statement, and a specific no-look-ahead rule before integration. No threshold has been selected. |
+| Project 1 validation patterns | `Project-1/Project-1-Apple/validation/cold_run.ps1`, `docs/ai_output_independent_source_check.md`, `docs/final_submission_manifest.md` | Useful patterns for cold runs, independent source checks, and submission tracking. | Do not copy Project 1 claims, use its local runtime, or represent its AI-off record as Project 2 evidence. |
