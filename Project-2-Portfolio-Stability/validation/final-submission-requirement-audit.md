@@ -8,6 +8,19 @@
 
 This audit distinguishes a runnable/analytical artifact from evidence sufficient for a live investment decision. `UNVERIFIED` is never treated as `PASS` by the application.
 
+## Repository-verification status
+
+| Verification statement | Status | Evidence / boundary |
+| --- | --- | --- |
+| Successfully pushed to GitHub | PASS for the package at `5e0f6016ca477da9a866fe942a4265397942a983` | `origin/main` was pushed and resolved to that SHA during the prior packaging run. The final correction commit must be pushed separately. |
+| Verified from a clean remote clone | PASS for the package at `5e0f6016ca477da9a866fe942a4265397942a983` | A fresh shallow clone found 19 required files, the locked-record blob matched the pre-run commit, the pipeline passed, 42 tests passed, and headless Streamlit returned HTTP 200. See `validation/final-cold-run-report.md`. |
+| Independently verified while logged out | UNVERIFIED | No logged-out browser/access test was performed. This must not be inferred from a Git clone. |
+| Instructional-team / unlisted-video access | UNVERIFIED | Student must verify after repository/video sharing settings and actual videos exist. |
+
+## Final correction verification
+
+On 2026-11-23, after the README and audit wording correction, the approved-data pipeline again reported 60 completed source-label months and 59 returns. The complete automated suite reported **42 tests passed in 35.861 seconds**. A headless Streamlit startup probe returned HTTP `200`. These checks did not run the locked changed-input experiment.
+
 ## Project 2 base requirements
 
 | Requirement | Exact project evidence | Status | Required action |
@@ -25,7 +38,7 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 | Requirement | Exact project evidence | Status | Required action |
 | --- | --- | --- | --- |
-| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/`; `validation/final-cold-run-report.md` | PARTIAL | Complete final push and repository-access check after the manifest-only commit. No `.env.example` is needed because the project uses no credentials. |
+| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/`; `validation/final-cold-run-report.md` | PARTIAL | A prior pushed package passed a clean remote clone. Push this final correction and verify its remote contents; a logged-out/instructional-team check remains student work. No `.env.example` is needed because the project uses no credentials. |
 | Visible output shows material inputs, as-of date, and decision without running code | `outputs/phase-5b-stress-results.md`; `docs/decision-memo.md` | PASS | Preserve the files and confirm their GitHub rendering after push. |
 | Decision Memo PDF, maximum two pages | `docs/Decision-Memo.pdf` | PASS | Visually checked; one page. |
 | Validation and AI Use PDF including tools, checks, limitations, and locked record | `docs/Validation-and-AI-Use.pdf`; `docs/validation-and-ai-use.md` | PASS | Visually checked; one page. |
@@ -45,10 +58,10 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 | Problem definition and decision usefulness (45) | Mandate, decision memo, app overview, `docs/development-plan.md` | PARTIAL | Evidence gates prevent an adopted/live process, but the rejection recommendation is decision-useful. |
 | Data integrity and traceability (45) | Raw JSON, approved data/lineage, data card, Phase 2B report/tests | PARTIAL | Archive primary-source live CPI, ALFRED, product, liquidity, and cost evidence with dates/licensing notes. |
 | Financial soundness and judgment (60) | Engine methodology, three-portfolio comparison, stress output, decision memo | PARTIAL | No sourced net cost or validated CPI/net evaluation; unresolved rules cannot be passed. |
-| Technical execution and usability (45) | Streamlit app, pinned requirements, unit/app tests, Phase 4 report | PARTIAL | Final clean-user run and manual live-demo check still needed. |
+| Technical execution and usability (45) | Streamlit app, pinned requirements, unit/app tests, Phase 4 report, final cold-run report | PARTIAL | Clean remote clone passed. Student still needs the actual Video 3 live-demo recording and final access check. |
 | Validation, sensitivity, reproducibility (75) | Tests, known answers, negative cases, locked record/result, stress reports | PARTIAL | Keep final cold-run evidence; source evidence, not just synthetic gates, remains incomplete. |
 | Professional communication (30) | README, memo/validation Markdown and PDFs, manifest | PARTIAL | Finish actual videos, corrected transcripts, YouTube links, and Brightspace steps. |
 
 ## Conclusion
 
-The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record, a passing clean-checkout record, and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until the final push/access check, three real videos/transcripts, manifest completion, and Brightspace attachments are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.
+The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record, a passing clean-remote-clone record, and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until the final correction push/remote check, three real videos/transcripts, manifest completion, and Brightspace attachments are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.

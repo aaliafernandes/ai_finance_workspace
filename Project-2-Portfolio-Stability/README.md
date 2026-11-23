@@ -6,17 +6,19 @@
 
 **Student ownership and educational purpose:** The analysis and investment decision are the student's own. This project is educational coursework only, not personalized investment advice or a recommendation to buy or sell any security.
 
-## Decision purpose
+## Completed application and decision
 
-This proposed application will help the fictional Meridian Foundation Reserve committee assess whether to adopt, allocate to, rebalance, pilot, or reject a long-only portfolio-construction process. It will compare two transparent baselines with a constrained minimum-volatility portfolio under the documented mandate. No recommendation has been selected in advance.
+This completed application evaluates whether the fictional Meridian Foundation Reserve committee should adopt, allocate to, rebalance, pilot, or reject a long-only portfolio-construction process. It compares two transparent baselines with a constrained minimum-volatility portfolio under the documented mandate.
+
+**Final committee decision: REJECT live allocation or process deployment; current allocation: 0%.** The rejection applies to live capital deployment while evidence-dependent mandate gates remain unresolved. A **conditional future 0%-5% pilot discussion range** may be reconsidered only after the evidence gates close, the committee approves the operating definitions and ETF implementation, and a fresh cold run passes. That future range is student-proposed discussion language, not client-approved policy or a current recommendation.
 
 All implementation choices marked **student-proposed** are analytical assumptions for this coursework project, not client-approved policy. See [Project-2-Mandate.md](Project-2-Mandate.md).
 
 ## Status
 
-The current package includes the decision memo, validation/AI-use record, executed locked-test evidence, non-locked stress results, and final submission audit. The current recommendation is **REJECT a live allocation; 0% allocation** while evidence-dependent mandate gates remain unresolved.
+The completed package includes the runnable app, approved data/lineage, portfolio engine, visible results, stress evidence, locked-test evidence, decision memo, validation/AI-use record, submission audit, and manifest.
 
-Do not treat the Lab 15 practice results or the existing data files as Project 2 results.
+Only the project-owned approved dataset and engine outputs are Project 2 results. The retained Lab 15-era raw data and legacy `prices.csv` are historical evidence, not approved analytics inputs.
 
 ## Install and launch
 
@@ -53,15 +55,15 @@ The approved output contains completed Yahoo source-label months only. Yahoo's m
 
 | Location | Purpose | Status |
 | --- | --- | --- |
-| `Project-2-Mandate.md` | Mandate specification, classifications, and unresolved questions | Phase 1 complete |
-| `docs/` | Decision memo, validation/AI-use record, methodology, source records, and submission PDFs | Written records and PDF companions complete; videos and transcripts remain student tasks |
-| `app/` | Project-owned Streamlit user interface and presentation model | Phase 4 complete |
-| `src/` | Project-owned data integrity, CPI, signal-provenance, cost-evidence, portfolio, verdict, and stress logic | Phase 5A complete; no live evidence integrations |
-| `tests/` | Project-owned integrity, provenance, portfolio, verdict, app-render, and synthetic stress tests | Phase 5A complete |
-| `outputs/` | Tracked, visible executed output for cold review | Phase 5B stress output complete; final cold-review output pending |
-| `validation/` | Cold-run evidence and validation artifacts | Phases 2B–5B reports complete; final cold run pending |
-| `data/raw/` | Source responses retained without transformation | Existing Lab 15-era data; requires Phase 2 review |
-| `data/processed/` | Processed inputs used by the future app | Existing Lab 15-era data; requires Phase 2 lineage checks |
+| `Project-2-Mandate.md` | Mandate specification, classifications, and unresolved questions | Complete; evidence-dependent rules remain UNVERIFIED |
+| `docs/` | Decision memo, validation/AI-use record, methodology, source records, and submission PDFs | Complete written package; videos and transcripts remain student tasks |
+| `app/` | Project-owned Streamlit user interface and presentation model | Complete and regression-tested |
+| `src/` | Project-owned data integrity, CPI, signal-provenance, cost-evidence, portfolio, verdict, and stress logic | Complete analytical implementation; no live primary-source integrations |
+| `tests/` | Project-owned integrity, provenance, portfolio, verdict, app-render, and synthetic stress tests | 42 passing tests in the final clean run |
+| `outputs/` | Tracked visible portfolio and stress outputs | Complete visible-output and stress records |
+| `validation/` | Locked record, phase reports, final audit, and cold-run evidence | Complete non-video validation package |
+| `data/raw/` | Preserved source responses without transformation | Retained historical evidence |
+| `data/processed/` | Validated price inputs and lineage used by the application | Complete approved dataset and lineage |
 
 ## Current data boundary
 
@@ -69,8 +71,8 @@ The existing BIL, IEF, LQD, and VT adjusted-close data were retrieved from Yahoo
 
 ## Reuse boundary
 
-Completed labs are source evidence and prototypes. Project 2 will reuse concepts and, where appropriate, refactor tested logic into project-owned files; it will not modify or depend on lab-relative imports. See [docs/reusable-components.md](docs/reusable-components.md).
+Completed labs are source evidence and prototypes. Project 2 reuses documented concepts through project-owned files and does not depend on lab-relative imports. See [docs/reusable-components.md](docs/reusable-components.md).
 
 ## Submission status
 
-The runnable app, gross portfolio logic, stress evidence, locked record, decision memo, validation/AI-use record, submission audit, and manifest are included. A clean clone passed the pipeline, 42 tests, and headless app probe; see [final-cold-run-report.md](validation/final-cold-run-report.md). Required student actions remain: record three videos, create corrected transcripts from those recordings, add YouTube URLs and timestamp indices to the manifest, attach the two required Markdown records to Brightspace, and perform final instructor-access checks. The process remains blocked from live allocation by the documented source-evidence gates. See [decision memo](docs/decision-memo.md), [validation record](docs/validation-and-ai-use.md), [submission audit](validation/final-submission-requirement-audit.md), and [submission manifest](submission-manifest.md).
+The runnable app, gross portfolio logic, stress evidence, locked record, decision memo, validation/AI-use record, submission audit, and manifest are included. A clean remote clone passed the pipeline, 42 tests, and headless app probe; see [final-cold-run-report.md](validation/final-cold-run-report.md). Required student actions remain: record three videos, create corrected transcripts from those recordings, add YouTube URLs and timestamp indices to the manifest, attach the two required Markdown records to Brightspace, and perform final instructor-access checks. The process remains blocked from live allocation by the documented source-evidence gates. See the [decision memo](docs/decision-memo.md), [validation record](docs/validation-and-ai-use.md), [visible output](outputs/visible-output-summary.md), [submission audit](validation/final-submission-requirement-audit.md), and [submission manifest](submission-manifest.md).
