@@ -1,0 +1,2 @@
+# Treat generated submission artifacts as binary so line-ending settings never alter them.
+*.pdf binary

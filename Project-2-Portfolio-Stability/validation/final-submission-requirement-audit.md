@@ -12,7 +12,7 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 | Requirement | Exact project evidence | Status | Required action |
 | --- | --- | --- | --- |
-| Python web app that a stranger can start from the README | `README.md`; `app/streamlit_app.py`; `app/app_model.py`; `validation/phase-4-validation-report.md` | PARTIAL | Final clean-checkout result is recorded in `validation/final-cold-run-report.md` after package freeze. |
+| Python web app that a stranger can start from the README | `README.md`; `app/streamlit_app.py`; `app/app_model.py`; `validation/phase-4-validation-report.md`; `validation/final-cold-run-report.md` | PASS | Preserve the clean-run record; video 3 must open with the app running live. |
 | Lab 13 mandate: objective, universe, benchmark, risk measure, and limits | `Project-2-Mandate.md`; `docs/portfolio-engine-methodology.md`; `src/mandate_verdicts.py` | PARTIAL | Client/source evidence is still needed for reserve, redemption, issuer look-through, CPI/net objective, calendar-loss, and signal definitions. |
 | Equal-weight baseline, second transparent baseline, and constrained portfolio; each has rule verdicts in app | `src/portfolio_engine.py`; `src/mandate_verdicts.py`; `app/streamlit_app.py`; `docs/decision-memo.md` | PASS for gross analytics and displayed verdicts | Keep NOT DECISION-READY framing; do not describe unresolved gates as compliance. |
 | One point-in-time signal and data card | `docs/data-integrity-and-point-in-time.md`; `src/credit_signal.py`; `src/cpi.py`; `tests/test_phase2b.py` | PARTIAL | Archive actual CPI releases and ALFRED vintages, then approve an action rule before any trading use. Signal is correctly monitor-only now. |
@@ -25,7 +25,7 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 | Requirement | Exact project evidence | Status | Required action |
 | --- | --- | --- | --- |
-| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/` | PARTIAL | Complete final push and repository-access check after the scoped commit. No `.env.example` is needed because the project uses no credentials. |
+| Accessible repository; README, pinned dependencies, source, visible output, docs records | `README.md`; `requirements.txt`; `app/`; `src/`; `outputs/`; `docs/`; `validation/final-cold-run-report.md` | PARTIAL | Complete final push and repository-access check after the manifest-only commit. No `.env.example` is needed because the project uses no credentials. |
 | Visible output shows material inputs, as-of date, and decision without running code | `outputs/phase-5b-stress-results.md`; `docs/decision-memo.md` | PASS | Preserve the files and confirm their GitHub rendering after push. |
 | Decision Memo PDF, maximum two pages | `docs/Decision-Memo.pdf` | PASS | Visually checked; one page. |
 | Validation and AI Use PDF including tools, checks, limitations, and locked record | `docs/Validation-and-AI-Use.pdf`; `docs/validation-and-ai-use.md` | PASS | Visually checked; one page. |
@@ -35,7 +35,7 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 | Video 3 <= 5 minutes, opens with app live, and corrected transcript | Placeholder in `submission-manifest.md` | MISSING | Record with live app opening, upload, and create transcript from recording. |
 | Brightspace manifest with stable repository/video URLs, duration, indices, access confirmation, frozen-file checklist | `submission-manifest.md` | PARTIAL | Insert actual YouTube URLs, titles, durations, timestamp indices, and logged-out/access confirmations after recording. |
 | Attach same two Markdown records to Brightspace | `docs/decision-memo.md`; `docs/validation-and-ai-use.md` | MISSING | Attach exactly those Markdown files to Brightspace. |
-| Clean-user check and first failure/resolution record | `validation/final-cold-run-report.md` | PARTIAL | Populate from the genuine final clean-checkout test and disclose any failure. |
+| Clean-user check and first failure/resolution record | `validation/final-cold-run-report.md` | PASS | Preserve the report; it discloses the host `venv` bootstrap limitation and successful clean project run. |
 | No secrets, keys, private data, or undocumented local paths | `Project-2-Portfolio-Stability/.gitignore`; repository scan recorded in cold-run report | PARTIAL | Repeat final scan just before submission and avoid adding credentials. |
 
 ## Rubric-oriented evidence check
@@ -51,4 +51,4 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 ## Conclusion
 
-The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until the final clean-checkout record, push/access check, three real videos/transcripts, manifest completion, and Brightspace attachments are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.
+The package is analytically reproducible and contains the required written Project 2 artifacts, including the committed-before-run locked record, a passing clean-checkout record, and an honest 0% reject-live-allocation recommendation. It is **not fully submission-complete** until the final push/access check, three real videos/transcripts, manifest completion, and Brightspace attachments are completed. It is **not decision-ready for a live allocation** while the documented evidence gates are unresolved.

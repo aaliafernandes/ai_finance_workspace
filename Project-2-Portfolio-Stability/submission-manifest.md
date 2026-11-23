@@ -3,14 +3,14 @@
 **Project:** Meridian Foundation Reserve Investment Management Application  
 **Repository:** <https://github.com/aaliafernandes/ai_finance_workspace>  
 **Project folder in repository:** `Project-2-Portfolio-Stability/`  
-**Package source commit:** To be filled after the scoped package commit is pushed. The final repository HEAD will be reported separately to avoid a self-referential commit loop.  
+**Package source commit:** `81e3957044f4646e2eb182a70765a2af5f63ad0c` (`Finalize Project 2 submission package`). The final repository HEAD is reported separately after this manifest-only update to avoid a self-referential commit loop.
 **Decision:** REJECT live allocation or process deployment; approved allocation range 0%. A future 0%-5% pilot is conditional student-proposed language only.
 
 ## Written materials and evidence
 
 | Item | Repository path | GitHub location after push | Access check |
 | --- | --- | --- | --- |
-| README / launch instructions | `README.md` | `Project-2-Portfolio-Stability/README.md` | Pending final GitHub check |
+| README / launch instructions | `README.md` | `Project-2-Portfolio-Stability/README.md` | Clean-clone command check passed; final GitHub rendering check pending |
 | Decision memo (Markdown) | `docs/decision-memo.md` | `Project-2-Portfolio-Stability/docs/decision-memo.md` | Pending final GitHub check |
 | Decision memo (PDF) | `docs/Decision-Memo.pdf` | `Project-2-Portfolio-Stability/docs/Decision-Memo.pdf` | Pending final GitHub check |
 | Validation and AI-use record (Markdown) | `docs/validation-and-ai-use.md` | `Project-2-Portfolio-Stability/docs/validation-and-ai-use.md` | Pending final GitHub check |
@@ -22,7 +22,7 @@
 | Locked prediction | `validation/locked-changed-input-prediction.md` | `Project-2-Portfolio-Stability/validation/locked-changed-input-prediction.md` | Immutable pre-run commit below |
 | Locked prediction commit | `0f1c1da43b7958be8ae82e8e5b3f8b2712aebdbc` | Repository commit | Verified locally; final remote check pending |
 | Locked-result verification | `validation/phase-5b-validation-report.md` | `Project-2-Portfolio-Stability/validation/phase-5b-validation-report.md` | Pending final GitHub check |
-| Cold-run record | `validation/final-cold-run-report.md` | `Project-2-Portfolio-Stability/validation/final-cold-run-report.md` | Pending after clean checkout |
+| Cold-run record | `validation/final-cold-run-report.md` | `Project-2-Portfolio-Stability/validation/final-cold-run-report.md` | Clean clone passed; final GitHub rendering check pending |
 
 ## Run the application
 
@@ -63,5 +63,6 @@ Each video must begin with the two required AI-use/student-ownership and educati
 ## Current frozen-file status
 
 - [x] Project-owned app, source, tests, approved data/lineage, stress evidence, locked record, decision memo, validation record, and PDF companions exist.
-- [ ] Final clean-checkout record and final GitHub access checks.
+- [x] Final clean-checkout record.
+- [ ] Final GitHub access checks after the manifest-only push.
 - [ ] Videos, corrected transcripts, YouTube metadata, Brightspace upload, and access confirmation.

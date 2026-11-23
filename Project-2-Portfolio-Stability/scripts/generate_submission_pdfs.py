@@ -121,7 +121,7 @@ def build_validation_record() -> None:
     add_table(story, rows, [1.35 * inch, 6.1 * inch], style_map)
     story += [
         p("Stress, limitations, and remaining work", "heading", style_map),
-        p("One-input window, return, risk, hypothetical-cost, turnover, and BIL scenario tests are implemented. All approved-data stress cases returned STOP_UNVERIFIED_MANDATE_EVIDENCE. Hypothetical costs are not sourced. CPI release/vintage evidence, ALFRED vintages/action rule, reserve and redemption evidence, issuer look-through, calendar-loss definition, and dated transaction costs remain unresolved. The official course pages were cloned and checked for package requirements; videos, transcripts, Brightspace attachments, and final access checks remain student tasks.", "body", style_map),
+        p("One-input window, return, risk, hypothetical-cost, turnover, and BIL scenario tests are implemented. All approved-data stress cases returned STOP_UNVERIFIED_MANDATE_EVIDENCE. Hypothetical costs are not sourced. CPI release/vintage evidence, ALFRED vintages/action rule, reserve and redemption evidence, issuer look-through, calendar-loss definition, and dated transaction costs remain unresolved. A clean clone passed the pipeline, 42 tests, and headless app check. Videos, transcripts, Brightspace attachments, and final access checks remain student tasks.", "body", style_map),
         p("Test result", "heading", style_map),
         p("The latest full regression suite reported 42 passed, 0 failed, 0 errors. Streamlit's bare-mode test warning did not produce a page exception. See the repository Markdown validation record for full methodology and evidence paths.", "body", style_map),
     ]
