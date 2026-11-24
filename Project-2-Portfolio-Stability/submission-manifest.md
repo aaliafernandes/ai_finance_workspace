@@ -38,28 +38,29 @@ python -m streamlit run app/streamlit_app.py
 
 No credentials or `.env` file are required. The data pipeline retains the raw JSON and legacy processed file while recreating the validated approved data and lineage.
 
-## Videos and corrected transcripts - PENDING STUDENT COMPLETION
+## Videos and corrected transcripts
 
-| Deliverable | Required form | URL / path | Title, duration, timestamps, and access confirmation |
+| Deliverable | Required form | URL / path | Duration / timestamp index / status |
 | --- | --- | --- | --- |
-| Video 1 | YouTube link; <= 3:00; system/thinking evolution and an independently checked AI output | **PENDING - record first** | **PENDING** |
-| Corrected transcript 1 | `transcript-video-1.txt` from actual recording | **PENDING - create after recording** | **PENDING** |
-| Video 2 | YouTube link; <= 5:00; code and validation walkthrough | **PENDING - record first** | **PENDING** |
-| Corrected transcript 2 | `transcript-video-2.txt` from actual recording | **PENDING - create after recording** | **PENDING** |
-| Video 3 | YouTube link; <= 5:00; opens with live app and committee defense | **PENDING - record first** | **PENDING** |
-| Corrected transcript 3 | `transcript-video-3.txt` from actual recording | **PENDING - create after recording** | **PENDING** |
+| Video 1 | YouTube link; <= 3:00; system/thinking evolution and an independently checked AI output | <https://youtu.be/hToZmeVKMwE> | Final duration reported by student: **3:18** — **exceeds the 3:00 limit by 18 seconds**. Source-recording index: 00:00 opening disclosures; 00:00:57 locked-prediction commit; 00:02:08 prediction; 00:03:15 final rejection. See transcript 1 timing limitation below. |
+| Corrected transcript 1 | `transcript-video-1.txt` from actual recording | `transcript-video-1.txt` | Reviewed automated transcript with obvious finance/product-name corrections. It retains source-recording timestamps only; final YouTube alignment is **UNVERIFIED** because the silent-pause trim intervals are unknown. |
+| Video 2 | YouTube link; <= 5:00; code and validation walkthrough | <https://youtu.be/sGohfiQHt2w> | Final duration reported by student: **5:37** — **exceeds the 5:00 limit by 37 seconds**. Source-recording index: 00:00 opening disclosures; 00:02:14 app walkthrough; 00:04:22 locked experiment; 00:05:20 manual testing / clean run. See transcript 2 timing limitation below. |
+| Corrected transcript 2 | `transcript-video-2.txt` from actual recording | `transcript-video-2.txt` | Reviewed automated transcript with obvious finance/product-name corrections. It retains source-recording timestamps only; final YouTube alignment is **UNVERIFIED** because the silent-pause trim intervals are unknown. |
+| Video 3 | YouTube link; <= 5:00; opens with live app and committee defense | <https://youtu.be/8ux-MGTgkI8> | Final duration reported by student: **4:29** — within the 5:00 limit. Source-recording index: 00:00 recommendation; 00:01:07 portfolios; 00:02:14 unresolved evidence; 00:03:21 0% / conditional pilot; 00:04:05 support/research tool. |
+| Corrected transcript 3 | `transcript-video-3.txt` from actual recording | `transcript-video-3.txt` | Reported untrimmed; source timestamps are provisional YouTube timestamps pending playback confirmation. |
 
-Each video must begin with the two required AI-use/student-ownership and educational-not-advice statements. Do not create transcripts or timestamp indices before the actual recordings exist.
+Video titles and unlisted-video accessibility have not been independently verified in YouTube. The required opening statements must be confirmed by playing each final YouTube upload; transcript review is not a substitute for final-video verification. For Videos 1 and 2, exact YouTube timestamps require either the final edited YouTube file or the exact source intervals removed in YouTube Studio. Without that evidence, timestamps must remain explicitly labelled source-recording indices.
 
-## Brightspace checklist - PENDING STUDENT COMPLETION
+## Brightspace checklist
 
 - [ ] Submit the repository URL above and verify instructor access while logged out / in the required course context.
 - [ ] Attach the same Markdown files `docs/decision-memo.md` and `docs/validation-and-ai-use.md`.
-- [ ] Add the three actual YouTube links, titles, durations, timestamp indices, and access confirmations to this manifest.
-- [ ] Attach or link the three corrected transcripts after comparing them against recordings.
+- [x] Add the three actual YouTube links and student-reported durations to this manifest. Video titles and access confirmations remain unverified.
+- [x] Link the three corrected transcript files. Review the unclear/echo-affected passages against the final uploads before submission.
 - [ ] Confirm the visible output, memo, transcripts, and validation record agree on the 0% decision, 8.15% prediction, 6.703604% actual result, and evidence limitations.
 - [ ] Confirm no credentials, private information, temporary files, or unstated local paths are committed.
 - [ ] Confirm all final links render from GitHub and all unlisted videos can be opened by the instructional team.
+- [ ] Resolve or obtain instructor direction on the Video 1 (3:18) and Video 2 (5:37) duration-limit exceptions.
 
 ## Current frozen-file status
 
@@ -67,4 +68,5 @@ Each video must begin with the two required AI-use/student-ownership and educati
 - [x] Final clean-checkout record.
 - [x] Stable source package pushed and verified from a clean remote clone.
 - [ ] Logged-out browser and instructional-team access checks.
-- [ ] Videos, corrected transcripts, YouTube metadata, Brightspace upload, and access confirmation.
+- [x] Video links and corrected source-recording transcripts.
+- [ ] Final-video timestamp alignment, video title/access confirmation, Brightspace upload, and access confirmation.

@@ -5,3 +5,19 @@ __pycache__/
 .env
 .streamlit/secrets.toml
 streamlit-*.log
+
+# Original recordings and locally generated caption drafts are submission working files,
+# not repository artifacts. The Brightspace manifest uses YouTube links instead.
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.m4v
+*.wav
+*.mp3
+*.m4a
+
+# Preserve machine transcript output for review without confusing it with the
+# corrected submission transcripts.
+.transcription-work/

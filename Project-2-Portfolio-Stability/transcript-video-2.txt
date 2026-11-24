@@ -1,0 +1,58 @@
+# Video 2 transcript - source recording timestamps
+
+Transcript from the actual local recording; obvious names and finance terms were corrected after review.
+Timing note: original 6:00; YouTube final 5:37; trim interval unknown.
+Do not treat the timestamps as final YouTube timestamps until the YouTube edit intervals are verified.
+
+[00:00:00.500 --> 00:00:05.500] This is my technical walkthrough of the Project 2 investment management application.
+[00:00:05.500 --> 00:00:12.500] I used OpenAI Codex to help me with the documentation and testing.This is an educational assignment.
+[00:00:12.500 --> 00:00:17.500] I did independently review the important results that I made in my own judgment.
+[00:00:17.500 --> 00:00:23.500] I organized my project into separate folders for the application, the data, and the financial calculations,
+[00:00:23.500 --> 00:00:28.480] calculations including the tests and validation to make it easier to understand and maintain
+[00:00:28.480 --> 00:00:38.780] and reproduce. So starting with the code, I used historical adjusted prices for four
+[00:00:38.780 --> 00:00:48.960] ETFs, BIL, IEF, LQD, and VT. During validation, I identified an issue with an incomplete
+[00:00:48.960 --> 00:00:55.760] October observation, rather than use potentially misleading data, I excluded the affected data
+[00:00:55.760 --> 00:01:02.800] and used an approved data set containing 60 monthly price observations and 59 monthly
+[00:01:02.800 --> 00:01:09.440] returns. I also documented the data sources and limitations so that the committee knows
+[00:01:09.440 --> 00:01:21.580] what evidence the results are based on. The portfolio engine handles the financial calculations
+[00:01:21.580 --> 00:01:29.260] including annualized returns, volatility, drawdown, and turnover. I compared three portfolios and
+[00:01:29.260 --> 00:01:36.620] equal-weight portfolio, the policy benchmark, and constrained minimum-volatility portfolio.
+[00:01:37.500 --> 00:01:44.140] I wanted to keep the calculations separate from the interface so they could be independently tested
+[00:01:44.140 --> 00:01:51.880] and verified. I also developed a stress testing component that allows me to evaluate how the
+[00:01:51.880 --> 00:01:58.600] portfolio response to changes in assumptions including the historical estimation window, risk,
+[00:01:58.600 --> 00:02:04.120] transaction costs and investment constraints. This was important because I didn't want my
+[00:02:04.120 --> 00:02:14.670] recommendation to depend entirely on one set of assumptions. So this is the Streamlit app.
+[00:02:15.390 --> 00:02:21.950] Here we can see the results from all three portfolios. The constrained portfolio allocates
+[00:02:21.950 --> 00:02:31.090] 25% to BIL, 40% to LQD, and 35% to VT with no allocation to IEF.
+[00:02:31.090 --> 00:02:39.910] A, produces a historical annualized return of approximately 4.23% and annualized volatility
+[00:02:39.910 --> 00:02:40.910] of 8.7%.
+[00:02:40.910 --> 00:02:55.470] These are historical gross results, not guaranteed future returns or fully verified net returns.
+[00:02:55.470 --> 00:03:00.510] One important feature of my application is that it distinguishes between passing a mathematical
+[00:03:00.510 --> 00:03:07.510] constraint and having enough evidence to make an investment decision, for example, some requirements
+[00:03:07.510 --> 00:03:15.430] relating to liquidity issue or concentration and transaction costs remain unverified.
+[00:03:15.430 --> 00:03:21.790] Instead of automatically treating these as passing, my application flags them and prevents the
+[00:03:21.790 --> 00:03:34.670] strategy from being considered decision ready. For the stress test, tightening the turnover limit
+[00:03:34.670 --> 00:03:46.940] from 25% to 20% changes the allocation and increases volatility to approximately 9.42%.
+[00:03:48.860 --> 00:03:54.780] Increasing the risk assumption also raises volatility to approximately 10.88%.
+[00:03:54.780 --> 00:04:02.740] present. However, introducing a 10% BIL minimum does not change the allocation because the
+[00:04:02.740 --> 00:04:09.940] constrained portfolio also holds 25% BIL. These results show that some assumptions
+[00:04:09.940 --> 00:04:22.980] have a greater impact on the portfolio than others. So this is my locked changed-input experiment.
+[00:04:22.980 --> 00:04:28.660] For my locked changed-input experiment, I independently predicted that reducing the historical
+[00:04:28.660 --> 00:04:36.140] window from 59 to 36 monthly returns would reduce volatility to 8.15%.
+[00:04:36.140 --> 00:04:43.470] I committed this prediction to GitHub before running the experiment.
+[00:04:43.470 --> 00:04:46.390] The actual result was 6.7%.
+[00:04:46.390 --> 00:04:51.630] My prediction was in the right direction, but I did underestimate the size of the decrease.
+[00:04:51.630 --> 00:04:58.910] I also then independently verified the volatility calculation.
+[00:04:58.910 --> 00:05:04.550] I also tested the stress scenarios and safeguards to check that the application responds to
+[00:05:04.550 --> 00:05:09.550] when assumptions change or required evidence is missing.
+[00:05:09.550 --> 00:05:12.550] During manual testing, I identified two additional issues
+[00:05:12.550 --> 00:05:15.550] involving the reset button and documentation links.
+[00:05:15.550 --> 00:05:20.550] I used Codex to help correct them and then retested the application.
+[00:05:20.550 --> 00:05:30.210] Finally, I validated the project from a clean GitHub check-out.
+[00:05:30.210 --> 00:05:34.210] All 42 automated tests passed and the application launched successfully.
+[00:05:34.210 --> 00:05:37.210] This helped me confirm that the project is reproducible
+[00:05:37.210 --> 00:05:42.210] and does not simply work on my original development setup.
+[00:05:42.210 --> 00:05:46.210] Overall, my goal was to build an application that produces reliable calculations
+[00:05:46.210 --> 00:05:49.210] while also being transparent about its limitations.
+[00:05:49.210 --> 00:05:53.210] Passing technical tests is important, but it does not automatically mean
+[00:05:53.210 --> 00:05:56.210] a portfolio is ready for investment.
