@@ -12,8 +12,8 @@ This audit distinguishes a runnable/analytical artifact from evidence sufficient
 
 | Verification statement | Status | Evidence / boundary |
 | --- | --- | --- |
-| Successfully pushed to GitHub | PASS for the corrected package at `46acffaab7e8b69ee6f94fa7950176c704aebfe7` | `origin/main` was pushed and resolved to that SHA. |
-| Verified from a clean remote clone | PASS for the corrected package at `46acffaab7e8b69ee6f94fa7950176c704aebfe7` | A fresh shallow clone found 19 required files, and the locked-record blob matched the pre-run commit. Earlier clean-run evidence shows the pipeline passed, 42 tests passed, and headless Streamlit returned HTTP 200. See `validation/final-cold-run-report.md`. |
+| Successfully pushed to GitHub | PASS for the final-YouTube-transcript source package at `aa4b0267a8c029a816ad93fa29284fa642a035bc` | `origin/main` was pushed and resolved to that SHA before this manifest-only metadata update. |
+| Verified from a clean remote clone | PARTIAL | A prior fresh shallow clone found 19 required files and the locked-record blob matched the pre-run commit. A fresh clone of the final video/transcript revision is required after this metadata update. Earlier clean-run evidence shows the pipeline passed, 42 tests passed, and headless Streamlit returned HTTP 200. See `validation/final-cold-run-report.md`. |
 | Independently verified while logged out | UNVERIFIED | No logged-out browser/access test was performed. This must not be inferred from a Git clone. |
 | Instructional-team / unlisted-video access | UNVERIFIED | Three unlisted URLs are recorded in `submission-manifest.md`, but playback as the instructional team was not tested. |
 
